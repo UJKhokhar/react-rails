@@ -43,4 +43,4 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'react-rails', '~> 0.13.0.0'
+gem 'react-rails'

@@ -10,9 +10,9 @@ var HelloWorld = React.createClass({
 });
 
 var ready = function () {
-  React.renderComponent(
+  React.render(
     <HelloWorld />,
-    document.getElementById('comments')
+    document.getElementById('react')
   );
 };
 
