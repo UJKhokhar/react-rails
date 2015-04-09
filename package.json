@@ -2,6 +2,7 @@
   "name": "TodoApp",
   "devDependencies" : {
     "browserify": "9.x",
+    "browserify-incremental": "^1.4.0",
     "reactify": "1.x"
   },
   "license": "MIT",
