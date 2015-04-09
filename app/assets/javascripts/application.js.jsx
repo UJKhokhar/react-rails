@@ -16,4 +16,6 @@
 //= require react
 //= require react_ujs
 
-React.render(<TodoApp />, document.getElementById("react"));
+var TodoApp = require('./components/todo_app');
+
+React.render(<TodoApp />, document.getElementById('react'));
