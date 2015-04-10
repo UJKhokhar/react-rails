@@ -16,6 +16,11 @@
 //= require react
 //= require react_ujs
 
+require('whatwg-fetch');
+
 var TodoApp = require('./components/todo_app');
+
+var getTodoItems = require('./api/todo_api')
+getTodoItems();
 
 React.render(<TodoApp />, document.getElementById('react'));
