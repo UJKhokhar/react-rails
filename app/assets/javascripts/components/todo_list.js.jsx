@@ -26,7 +26,7 @@ var TodoList = React.createClass({
 	},
 
 	render: function(){
-		var items = this.state.items.map(createTodoItemComponent)
+		var items = this.state.items.map(createTodoItemComponent);
 
 		return (
 			<ul>
