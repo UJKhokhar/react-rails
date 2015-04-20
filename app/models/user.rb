@@ -20,5 +20,6 @@ class User < ActiveRecord::Base
   def after_confirmation
     # Send POST reqest to /api/users current_user.id and current_user.auth_token
     # http://localhost:3001/api/users', {:user => {:id => 66, :auth_token => 'testtoken'}}
+    # HTTParty.post("http://rubygems.org/api/v1/gems/httparty/owners", :user => {:id => 66, :auth_token => 'testtoken'}})
   end
 end
