@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
     end while self.class.exists?(auth_token: auth_token)
     self.update_attribute :auth_token, auth_token
   end
+
+  def after_confirmation
+    # Send POST reqest to /api/users current_user.id and current_user.auth_token
+    # http://localhost:3001/api/users', {:user => {:id => 66, :auth_token => 'testtoken'}}
+  end
 end
