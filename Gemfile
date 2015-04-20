@@ -69,3 +69,5 @@ gem 'figaro'
 gem 'faker'
 
 gem 'bootstrap-sass'
+
+gem 'rest-client'
