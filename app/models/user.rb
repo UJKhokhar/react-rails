@@ -5,21 +5,22 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  after_create :set_auth_token
-
   protected
 
-  def set_auth_token
+  def generate_auth_token
     auth_token = nil
     begin
       auth_token = SecureRandom.uuid.gsub(/\-/, '')
     end while self.class.exists?(auth_token: auth_token)
-    self.update_attribute :auth_token, auth_token
+    auth_token
   end
 
   def after_confirmation
-    # Send POST reqest to /api/users current_user.id and current_user.auth_token
-    # http://localhost:3001/api/users', {:user => {:id => 66, :auth_token => 'testtoken'}}
-    # HTTParty.post("http://rubygems.org/api/v1/gems/httparty/owners", :user => {:id => 66, :auth_token => 'testtoken'}})
+    # TODO: Need to check for failures. Possibly create set auth token method in user profile. 
+    token = generate_auth_token
+    response = RestClient.post "http://localhost:3001/api/users", {:user => {:auth_token => token}}
+    if response.code == 200
+      self.update_attributes(auth_token: token)
+    end
   end
 end
