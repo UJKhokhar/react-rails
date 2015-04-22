@@ -65,3 +65,9 @@ group :development do
 end
 
 gem 'figaro'
+
+gem 'faker'
+
+gem 'bootstrap-sass'
+
+gem 'rest-client'

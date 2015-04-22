@@ -1,7 +1,7 @@
-var TodoActionCreator = require('../actions/todo_actions_creators')
-var authHeader = {'Authorization': 'Token token="umartoken"'}
-var TodoAppDispatcher = require('../dispatcher/todo_dispatcher')
-
+var TodoActionCreator = require('../actions/todo_actions_creators');
+var TodoAppDispatcher = require('../dispatcher/todo_dispatcher');
+var authToken = ( $( "#token" ).data() ).token;
+var authHeader = {'Authorization': 'Token token="'+ authToken +'"'}
 var qwest = require('qwest');
 
 function urlMaker(path) {
