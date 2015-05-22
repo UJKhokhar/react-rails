@@ -45,4 +45,4 @@ end
 
 gem 'react-rails'
 
-gem 'browserify-rails'
+gem 'browserify-rails', '~> 0.9.1'
